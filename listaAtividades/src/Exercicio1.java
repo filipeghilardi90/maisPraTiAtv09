@@ -25,9 +25,15 @@ public class Exercicio1 {
             System.out.println("2. Remover Tarefa");
             System.out.println("3. Marcar Tarefa como Concluída");
             System.out.println("4. Voltar ao Menu Principal");
-            opcao = scanner.nextInt();
+            //opcao = scanner.nextInt();
+           // scanner.nextLine(); // Consome a nova linha
+            if (scanner.hasNextInt()) {
+                opcao = scanner.nextInt();
+            } else {
+                opcao = -1; // Valor inválido
+                scanner.next(); // Limpa a entrada inválida
+            }
             scanner.nextLine(); // Consome a nova linha
-
             switch (opcao) {
                 case 1:
                     System.out.print("Descrição da tarefa: ");
